@@ -1,0 +1,149 @@
+﻿body {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.task-table {
+    display: flex;
+    flex-direction: column-reverse;
+    border: 1px solid #ffffff;
+}
+
+.task-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid #ffffff;
+}
+
+    .task-row:nth-child(odd) {
+        background-color: #222222;
+    }
+
+.task-column-title {
+    flex: 1;
+    width: 200px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.task-columnname-title {
+    flex: 1;
+    width: 200px;
+    text-align: center;
+}
+
+.task-column-status {
+    width: 100px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.task-column-complete-discomplete {
+    width: 170px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.task-column-creation-date {
+    width: 170px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.task-column-delete {
+    width: 100px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.complete-discomplete-button {
+    background-color: #2070a0;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+    .complete-discomplete-button:hover {
+        background-color: #005080;
+    }
+
+    .complete-discomplete-button:active {
+        background-color: #003366;
+    }
+
+.delete-button {
+    background-color: #e74c3c;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+    .delete-button:hover {
+        background-color: #c0392b;
+    }
+
+    .delete-button:active {
+        background-color: #a52714;
+    }
+
+.add-button {
+    background-color: #4caf50;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+    .add-button:hover {
+        background-color: #45a049;
+    }
+
+    .add-button:active {
+        background-color: #3e8940;
+    }
+
+.input-task-title {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+    .input-task-title:hover {
+        border-color: #2070a0;
+    }
+
+    .input-task-title:focus {
+        border-color: #2070a0;
+    }
+
+.bold-text {
+    font-weight: bold;
+}
+
+.completed {
+    color: lime;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.pending {
+    color: red;
+    font-weight: bold;
+    white-space: nowrap;
+}

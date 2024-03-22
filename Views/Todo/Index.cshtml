@@ -1,0 +1,88 @@
+﻿@using TodoList.Models
+
+@model List<TaskItem>
+
+<link rel="stylesheet" href="~/css/Todostyle.css"/> 
+
+
+<h2>Simple To-Do List</h2>
+
+<form method="post" action="/Todo/AddTask">
+    <div>
+        <input class="input-task-title" type="text" name="title" placeholder="Enter task title" />
+        <button class="add-button" type="submit">Add</button>
+    </div>
+</form>
+
+<div class="task-table">
+    @foreach (var task in Model)
+    {
+        <div class="task-row">
+            <div class="task-column-title">@task.Title</div>
+
+            <div class="task-column-status">
+                    @if (task.IsCompleted)
+                    {
+                        <span class="completed">(Completed)</span>
+                    }
+                    else
+                    {
+                        <span class="pending">(Pending)</span>
+                    }
+            </div>
+
+            <div class="task-column-complete-discomplete">
+                    @if (task.IsCompleted)
+                    {
+                        <form method="post" action="/Todo/DiscompleteTask">
+                        <input type="hidden" name="id" value="@task.Id" />
+                        <button class="complete-discomplete-button" type="submit">Discomplete</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form method="post" action="/Todo/CompleteTask">
+                        <input type="hidden" name="id" value="@task.Id" />
+                        <button class="complete-discomplete-button" type="submit">Complete</button>
+                        </form>
+                    }
+            </div>
+
+            <div class="task-column-delete">
+                    <form method="post" action="/Todo/DeleteTask">
+                        <input type="hidden" name="id" value="@task.Id" />
+                        <button class="delete-button" type="submit">Delete</button>
+                    </form>
+            </div>
+
+            <div class="task-column-creation-date">
+                @task.CreatedAt.ToString("dd.MM.yyyy HH:mm")
+            </div>
+
+        </div>
+    }
+
+    <div class="task-row">
+        <div class="task-columnname-title">
+            <span class="bold-text">Title</span>
+        </div>
+
+        <div class="task-column-status">
+            <span class="bold-text">Status</span>
+        </div>
+
+        <div class="task-column-complete-discomplete">
+            <span class="bold-text">Complete/Discomplete</span>
+        </div>
+
+        <div class="task-column-delete">
+            <span class="bold-text">Delete</span>
+        </div>
+
+        <div class="task-column-creation-date">
+            <span class="bold-text">Creation Date</span>
+        </div>
+
+    </div>
+
+</div>
